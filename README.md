@@ -19,33 +19,85 @@ Com a ajuda do decorator @pipe crie um pipe com o ng g p pipes/captalizePhillips
 
 O exercício consiste em fazer uma navbar, com ajuda do bootstrap ou não, como no exemplo da imagem em anexo para acessar diferentes componentes ou containers html ao clicar em cada uma das opções.
 
-Depois do fechamento da tag html <navbar> cole o código abaixo:
+- Depois do fechamento da tag html <navbar> cole o código abaixo:
 
-`<div>` <br>
-    `<h2>Estou na página de Home</h2>` <br>
-    `<h2>Estou na página de Preços</h2>` <br>
-    `<h2>Estou na página de Informações</h2>` <br>
-`</div>`
+```
+<div>
+  <h2>Estou na página de Home</h2>
+  <h2>Estou na página de Preços</h2>
+  <h2>Estou na página de Informações</h2>
+</div>
+```
     
-Declare na classe do seu componente uma variável page do tipo string.
-Com a construção da sua navbar adicione um evento de click em cada uma das opções da navbar e no seu valor diga que a variável page recebe um valor correspondente a aquela página, como se fosse um id.
+- Declare na classe do seu componente uma variável page do tipo string.
+- Com a construção da sua navbar adicione um evento de click em cada uma das opções da navbar e no seu valor diga que a variável page recebe um valor correspondente a aquela página, como se fosse um id. <br>
 Exemplo: levando em conta o exemplo na imagem em anexo, será adicionado um evento de click na palavra Home onde seu valor será page=‘Home’ ( (click)=”page = ‘Home’” ).
-Já na `<div>` deverá ser adicionada a diretiva ngSwitch passando a variável page como valor.
-Após isso em cada tag html `<h2>` será adicionada a cláusula ngSwitchcase recebendo o valor correspondente a aquela página. Ex: no segundo h2 ficaria *ngSwitchCase=”’Preços’”.
-O primeiro h1 deve ser o valor padrão para o ngSwitchDefault.
+- Já na `<div>` deverá ser adicionada a diretiva ngSwitch passando a variável page como valor.
+- Após isso em cada tag html `<h2>` será adicionada a cláusula ngSwitchcase recebendo o valor correspondente a aquela página. Ex: no segundo h2 ficaria *ngSwitchCase=”’Preços’”.
+- O primeiro h1 deve ser o valor padrão para o ngSwitchDefault.
 
-### [M1S09] Ex 3 - Componentes
+### [M1S11] Ex 3 - ngFor
 
-Crie um componente geral com estilizações do bootstrap chamado navbar que será a principal forma de navegação de um site fictício. <br>
-Ex: <a href="https://getbootstrap.com/docs/5.2/components/navbar/#how-it-works" target="_blank">
-    Navbar
-</a>
+Em um projeto angular na classe do seu component declare a variável abaixo.
 
-No final para verificar seu funcionamento chame o navbar no componente inicial (app)
+```
+arrayFotos: any = [
+  {
+    url: "",
+    description:""
+  },
+  {
+    url: "",
+    description:""
+  },
+  {
+    url: "",
+    description:""
+  },
+  {
+    url: "",
+    description:""
+  },
+  {
+    url: "",
+    description:""
+  }
+]
+```
 
-### [M1S09] Ex 4 - Componente (Parte 1)
+- A variável arrayFotos consiste em um array de objetos com duas propriedades, a url que recebe o caminho da sua foto e a description contendo uma breve descrição da foto.
+- Agora escolha 5 imagens de sua preferência, a url de cada imagem deve ser armazenada dentro da propriedade url e a descrição dentro da description.
+- Já no html do componente faça um card usando classes do css ou bootstrap, o design fica a sua escolha.
+- Com o uso do ngFor repita e mostre cada imagem em um card diferente com a descrição dela abaixo da imagem.
 
-Crie um componente que será um card, este card poderá ser utilizado para indicar algumas informações sobre personagens da sua série favorita, exemplo, minha série favorita é Game Of Thrones, um de seus personagens é o Jon Snow. Essas informações são: nome, uma imagem, nome do ator, e uma breve descrição. No início esse componente será chamado de item-card e as informações serão fixas, escolha apenas um personagem.
+### [M1S11] Ex 4 - ngIf
+
+Para treinar a diretiva ngIf vamos seguir as instruções abaixo:
+
+- Inicie um projeto angular e no css do seu componente cole o código do arquivo em anexo.
+- Depois disso adicione no template html do seu componente o código abaixo.
+
+```
+<div class="card">
+  <a>Open Demo Modal</a>
+</div>
+
+<div class="modal">
+  <div class="modal__content">
+    <h1>Example modal</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Error minima
+      libero veniam, modi corrupti doloremque repellendus vitae mollitia. Ipsum
+      voluptatibus ea ab quos molestiae at expedita maiores dolore a corrupti!
+    </p>
+    <a class="modal__close">&times;</a>
+  </div>
+</div>
+```
+
+- Declare uma variável chamada showModal do tipo boolean na classe do seu componente.
+- Após isso nas duas tags html <a> com a ajuda do evento de click mude a variável para o valor contrário ao valor atual.
+- Já na tag html <div> que possui a classe ‘modal’, adicione a diretiva ngIf para apenas mostrar essa <div> caso a variável for true.
 
 ### [M1S09] Ex 5 - Property Binding (Parte 2)
 
