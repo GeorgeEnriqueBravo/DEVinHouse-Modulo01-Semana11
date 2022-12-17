@@ -11,15 +11,28 @@ para baixa-lo. Após o download, abra a pasta do projeto por um terminal ou pelo
 ---
 
 # Lista de exercícios <img width="75px" alt="Philips" src="./src/assets/images/lista.png"/>
-### [M1S09] Ex 1 - Bootstrap
+### [M1S11] Ex 1 - Criando um pipe
 
-Em um projeto angular, crie um novo template para um formulário de registro de matérias usando classes de estilização e estrutura bootstrap, o visual e a estrutura usando classes do bootstrap será avaliado, portanto caprichem no design ^-^.
-O formulário deverá ter os seguintes campos inputs: “nome”, “carga horária de horas aula” e “escola”. Também no formulário deverá ter um campo “Professor(a)” que será um select com 4 opções, Otávio, Vivian, Leandro e Cláudia, além disso dois radiobutton verificando se a matéria é opcional ou não.
+Com a ajuda do decorator @pipe crie um pipe com o ng g p pipes/captalizePhillips para transformar a primeira letra de cada palavra em maiúscula.
 
-### [M1S09] Ex 2 - Componentes do bootstrap
+### [M1S11] Ex 2 - Menu
 
-No mesmo projeto angular crie um botão de enviar formulário que ao clicar carregue um modal do bootstrap com a mensagem “Formulário enviado com sucesso” e um botão para fechar o modal. <br>
-OBS: lembrar de importar o script js do bootstrap no arquivo angular.json.
+O exercício consiste em fazer uma navbar, com ajuda do bootstrap ou não, como no exemplo da imagem em anexo para acessar diferentes componentes ou containers html ao clicar em cada uma das opções.
+
+Depois do fechamento da tag html <navbar> cole o código abaixo:
+
+`<div>` <br>
+    `<h2>Estou na página de Home</h2>` <br>
+    `<h2>Estou na página de Preços</h2>` <br>
+    `<h2>Estou na página de Informações</h2>` <br>
+`</div>`
+    
+Declare na classe do seu componente uma variável page do tipo string.
+Com a construção da sua navbar adicione um evento de click em cada uma das opções da navbar e no seu valor diga que a variável page recebe um valor correspondente a aquela página, como se fosse um id.
+Exemplo: levando em conta o exemplo na imagem em anexo, será adicionado um evento de click na palavra Home onde seu valor será page=‘Home’ ( (click)=”page = ‘Home’” ).
+Já na `<div>` deverá ser adicionada a diretiva ngSwitch passando a variável page como valor.
+Após isso em cada tag html `<h2>` será adicionada a cláusula ngSwitchcase recebendo o valor correspondente a aquela página. Ex: no segundo h2 ficaria *ngSwitchCase=”’Preços’”.
+O primeiro h1 deve ser o valor padrão para o ngSwitchDefault.
 
 ### [M1S09] Ex 3 - Componentes
 
