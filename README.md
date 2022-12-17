@@ -99,38 +99,30 @@ Para treinar a diretiva ngIf vamos seguir as instruções abaixo:
 - Após isso nas duas tags html <a> com a ajuda do evento de click mude a variável para o valor contrário ao valor atual.
 - Já na tag html <div> que possui a classe ‘modal’, adicione a diretiva ngIf para apenas mostrar essa <div> caso a variável for true.
 
-### [M1S09] Ex 5 - Property Binding (Parte 2)
+### [M1S11] Ex 5 - ng-content
 
-Com o mesmo componente criado anteriormente no exercício 2 iremos com a ajuda do property binding criaremos um objeto chamado personagem com o seguinte formato: <br>
-Exemplo: <br>
-`
-pesonagem: any = {
-    nome: 'Jon Snow',
-    imagem: 'https://tm.ibxk.com.br/2022/08/26/26174558850404.jpg?    ims=704x264',
-    nomeAtor: 'Kit Harington',
-    descricao:
-      'Ator ator britânico. É mais conhecido por interpretar Jon Snow na     série televisiva Game of Thrones da HBO. Meu marido, mas ele não sabe U.u',
-  };`
-  
-Sua missão será passar cada informação do objeto através do property binding, para substituir as informações antes fixas no template do componente item-card.
+Utilizando o modal criado no exercício 04, substitua toda a tag HTML <p> por ng-content , chame esse componente em outro local e adicione um parágrafo com lorem ipsum.
 
-### [M1S09] Ex 6 - @Input (Parte 3)
+### [M1S11] Ex 6 - ng-content
 
-Continuando nossa função de tornar um componente dinâmico iremos mudar a declaração do objeto, anteriormente criado no próprio componente, para ser passada através do @input do componente pai para o filho (item-card).
+Observe a imagem em anexo, crie um componente e recrie um modelo igual ou semelhante a ela, porém o título, o subtítulo e a descrição deverão ser passados através do ng-content. <br>
+Dica: Lembre-se das aulas onde são passados dois tipos de content para o mesmo componente.
 
-### [M1S09] Ex 7 - Injeção de dependência
+### [M1S11] Ex 7 - ngIf e else
 
-Para praticar mais a organização de responsabilidades feita no front e também a injeção de dependências, iremos simular um projeto com comunicação para o localStorage. Primeiro crie um service para fazer a comunicação com o controlador do template e o envio de dados ao localStorage. <br>
-A temática será a mesma abordada nas aulas. No html do template deverá ter um formulário bootstrap com dois inputs, um para capturar o email e outro para a senha, além disso também deverá haver um botão de enviar. Através do evento de click, visto rapidamente em aula envie esses dados até o localStorage no formato de objeto. <br>
-Deverá ser feito a injeção de dependência do service criado, para o controller.
+Usando um input html crie uma validação para se caso o input estiver com a validação correta apareça uma mensagem com a fonte verde e se caso não estiver correta, aparecer uma mensagem em vermelha. Pode usar a criatividade para a estilização que quiser e para a mensagem também.
+OBS: Utilize ngIf e else (com o uso do ng-template) para trocar as mensagens.
 
-OBS: lembre-se do fluxo de informações:
-TEMPLATE > CONTROLLER > SERVICE > LOCAL STORAGE
+### [M1S11] Ex 8 - Revisão geral
 
-### [M1S09] Ex 8 - @Output
+Em um projeto angular e com ajuda do bootstrap monte uma lista de tarefas onde você poderá adicionar itens a partir de um `<input>`, esse `<input>` receberá um ngModel para armazenar a string que será digitada pelo usuário. Feito isso, vamos às observações:
 
-Com um componente de busca criado, adicione inicialmente apenas um input para receber a pesquisa, adicione um @output e chame-o por meio do componente pai (app). <br>
-A cada tecla digitada na busca, um console.log deve ser aberto em home com o texto que está sendo formado.
+- A variável que carrega a listagem deve ser declarada na classe do componente e inicialmente será vazia.
+- No html do componente deverá ter um `<input>` para cadastrar sua tarefa, um botão para adicionar (tag `<button>`), a listagem (tag `<ul>` e `<li>`) e uma mensagem de aviso para quando a listagem for vazia (tag `<p>`).
+- Ao clicar no botão de salvar item a função que adiciona um item ao array deverá ser ativada para adicionar esse item digitado ao array de strings ( .push ).
+- O container que carregará a listagem apenas se tornará visível quando estiver com no mínimo 1 item no array de tarefas.
+- Deverá ser apresentada uma mensagem de aviso para quando o array estiver vazio. Faça isso com ajuda no ngIf.
+- A listagem será processada em um ngFor e com isso no container que será repetido irá imprimir cada item do array.
 
 ---
 
