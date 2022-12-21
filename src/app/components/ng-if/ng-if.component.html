@@ -1,0 +1,29 @@
+<div class="card">
+    <a (click)="showModal = !showModal">Ex 04 - nIf Modal</a>
+  </div>
+  
+  <div class="modal" *ngIf="showModal">
+    <div class="modal__content">
+      <h4>Ex 05 - Parágrafo por ng-content</h4>
+
+        <ng-content></ng-content>
+
+      <a (click)="showModal = !showModal" class="modal__close">&times;</a>
+    </div>
+  </div>
+
+  <!-- <div class="card">
+    <a (click)="showModal = !showModal">Open Demo Modal</a>
+  </div>
+  
+  <div class="modal" *ngIf="showModal">
+    <div class="modal__content">
+      <h1>Example modal</h1>
+
+        <app-ng-content>
+            Novo Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis similique illum natus iure exercitationem nesciunt ut ullam nostrum quia quod! Atque consequuntur excepturi, itaque saepe fuga voluptates laborum quaerat fugiat?
+        </app-ng-content>
+
+      <a (click)="showModal = !showModal" class="modal__close">&times;</a>
+    </div>
+  </div> -->

@@ -1,0 +1,77 @@
+<div class="container">
+
+<!-- Exercicio 2 - Menu -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar Ex 02</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="home" (click)="page='Home'">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="precos" (click)="page='Preços'">Preços</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="informacoes" (click)="page='Informações'">Informações</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<br>
+
+<router-outlet></router-outlet>
+
+<div [ngSwitch]="page">
+  <h2 *ngSwitchDefault>Estou na página de Home</h2>
+  <h2 *ngSwitchCase="'Preços'">Estou na página de Preços</h2>
+  <h2 *ngSwitchCase="'Informações'">Estou na página de Informações</h2>
+</div>
+
+<br><hr><br>
+
+<!-- Exercicio 1 - Criando um pipe-->
+<h3>Ex 01 - Digite algo para testar o pipe 'captalizePhillips'</h3>
+<input type="text" [(ngModel)]="texto" name="texto">
+
+<h3>{{ texto | captalizePhillips }}</h3>
+
+<br><hr><br>
+
+<!-- Exercício 3 - ngFor -->
+<app-ng-for></app-ng-for>
+
+<br><hr><br>
+
+<!-- Exercício 4 - ngIf -->
+<!-- Exercício 5 - ng-content -->
+<app-ng-if>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis similique illum natus iure exercitationem nesciunt ut ullam nostrum quia quod! Atque consequuntur excepturi, itaque saepe fuga voluptates laborum quaerat fugiat?
+</app-ng-if>
+
+<br><hr><br>
+
+<!-- Exercício 6 - ng-content -->
+<app-ng-content>
+    <h3 class="titulo">Exercício 06</h3>
+    <h4 class="subtitulo">ng-content</h4>
+    <p class="descricao">
+      Observe a imagem em anexo, crie um componente e recrie um modelo igual ou semelhante a ela, porém o título, o subtítulo e a descrição deverão ser passados através do ng-content.
+      Dica: Lembre-se das aulas onde são passados dois tipos de content para o mesmo componente.
+    </p>
+</app-ng-content>
+
+<br><hr><br>
+
+<!-- Exercício 7 - ngIf e else -->
+<app-ng-if-else></app-ng-if-else>
+
+<br><hr><br>
+
+<!-- Exercício 8 - Revisão geral -->
+<app-lista></app-lista>
+
+</div>

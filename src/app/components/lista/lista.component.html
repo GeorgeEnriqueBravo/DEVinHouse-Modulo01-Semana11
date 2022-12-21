@@ -1,0 +1,15 @@
+<div class="container">
+
+    <h2>Ex 08 - Revisão geral</h2>
+
+    <input type="text" [(ngModel)]="tarefa">
+
+    <button (click)="addItem()">Salvar Item</button>
+
+    <ul id="lista" *ngIf="listagem.length >= 1">
+        <li *ngFor="let item of listagem">{{ item }}</li>
+    </ul>
+
+    <p *ngIf="listagem.length < 1">Listagem Vázia</p>
+
+</div>

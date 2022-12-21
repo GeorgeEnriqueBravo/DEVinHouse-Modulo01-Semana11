@@ -1,0 +1,16 @@
+<!-- <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{ arrayFotos[0].url }}" alt="Card image cap">
+    <div class="card-body">
+        <p class="card-text">{{ arrayFotos[0].description }}</p>
+    </div>
+  </div> -->
+
+<h3>Ex 03 - ngFor</h3>
+<div class="row">
+  <div class="card" style="width: 18rem;" *ngFor="let felino of arrayFotos">
+    <img class="card-img-top" src="{{ felino.url }}" alt="Card image cap">
+    <div class="card-body">
+        <p class="card-text">{{ felino.description }}</p>
+    </div>
+  </div>
+</div>

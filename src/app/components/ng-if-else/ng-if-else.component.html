@@ -1,0 +1,27 @@
+<h2>Ex 07 - ngIf e else</h2>
+
+<!-- <div class="col-md-4">
+    <label for="validationCustom01" class="form-label">First name</label>
+    <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div> -->
+
+  <div class="mb-3">
+    <!-- <label class="form-label">texto</label> -->
+    <input type="text" class="form-control" [(ngModel)]="texto" />
+
+    <div
+      class="alert alert-danger"
+      *ngIf="texto.length < 5; else ok"
+    >
+      Digite no mínimo 5 caracteres.
+    </div>
+
+    <ng-template #ok>
+        <div class="alert alert-success">
+            Ok, pode prosseguir!
+        </div>
+    </ng-template>
+  </div>
